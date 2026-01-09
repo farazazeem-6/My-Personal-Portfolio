@@ -6,7 +6,7 @@ import HeroImg from "../../../public/personal.jpeg";
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
-    behavior: "smooth", // This makes it smooth scroll
+    behavior: "smooth",
   });
 };
 const Footer = () => {
