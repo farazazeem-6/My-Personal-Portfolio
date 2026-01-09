@@ -1,4 +1,3 @@
-import { cn } from "../../lib/utils";
 import { Marquee } from "../../components/ui/marquee";
 import styles from "../ReviewCard/ReviewCard.module.css";
 import starImg from "../../../public/star.png";

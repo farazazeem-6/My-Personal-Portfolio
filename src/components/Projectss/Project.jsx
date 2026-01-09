@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import styles from "../../components/Projectss/Project.module.css";
 import { AnimatedLine, RevealOnScroll } from "../Skills/Skill";
 import TouchAppIcon from "@mui/icons-material/TouchApp";
