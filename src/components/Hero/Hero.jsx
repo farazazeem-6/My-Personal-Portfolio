@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "../../components/Hero/Hero.module.css";
 import { cn } from "../../lib/utils";
 import Header from "../Header/Header";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import HeroImg from "../../../public/personal.jpeg";
 
