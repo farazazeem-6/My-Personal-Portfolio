@@ -1,6 +1,5 @@
 import Footer from "../components/Footer/Footer";
 import Header from ".././components/Header/Header";
-import Hero from ".././components/Hero/Hero";
 import React, { Fragment, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import PageWrapper from "../components/PageWrapper/PageWrapper";
@@ -9,7 +8,6 @@ import "../../src/App.css";
 import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
 import WhatsappBtn from "../components/WhatsappButton/WhatsappBtn";
 import { ScrollProgress } from "../components/ui/scroll-progress";
-import BasicModal from "../components/YoutubeModal/YoutubeModal";
 
 function Layout() {
   const theme = useSelector((state) => state.theme.mode);
