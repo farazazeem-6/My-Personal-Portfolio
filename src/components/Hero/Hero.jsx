@@ -1,18 +1,12 @@
 import { useEffect, useState } from "react";
 import styles from "../../components/Hero/Hero.module.css";
 import { cn } from "../../lib/utils";
-import Header from "../Header/Header";
 import { AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import HeroImg from "../../../public/personal.jpeg";
+import { motion } from "framer-motion";
+import { TEXTS } from "../../constant/string";
 
-
-const TEXTS = [
-  "Frontend Developer",
-  "Backend Developer",
-  "Android Developer",
-  "IOS Developer",
-];
 
 function Hero() {
   const navigate = useNavigate();
@@ -31,9 +25,9 @@ function Hero() {
       <div
         className={cn(
           "absolute inset-0",
-          "[background-size:20px_20px]",
-          "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
-          "dark:[background-image:radial-gradient(rgba(212,212,212,0.2)_1px,transparent_.8px)]"
+          "[bg-size:20px_20px]",
+          "bg-[radial-gradient(#d4d4d4_1px,transparent_1px)]",
+          "dark:bg-[radial-gradient(rgba(212,212,212,0.2)_1px,transparent_.8px)]",
         )}
       />
 
@@ -59,9 +53,9 @@ function Hero() {
             </AnimatePresence>
           </h3>
           <p className={styles.roleText}>
-            🚀 Full Stack Engineer with{" "}
+            🚀 Front End Developer with{" "}
             <span style={{ fontWeight: 700, marginRight: "5px" }}>
-              1 year of learning and 2 years of freelancing
+              1.5 year of learning and 6 month of freelancing
             </span>
             experience.
           </p>
@@ -74,7 +68,7 @@ function Hero() {
           </p>
           <p>💻 Experienced in</p>
           <p style={{ fontWeight: 700 }} className={styles.skillsText}>
-            MERN Stack, TypeScript, React, Redux Toolkit, GSAP, Tailwind CSS,
+            Next JS, TypeScript, React, Redux Toolkit, GSAP, Tailwind CSS,
             BootStrap, React Hook Form, and Framer Motion.
           </p>
           <button
@@ -86,36 +80,33 @@ function Hero() {
           </button>
         </div>
         <div className={styles.heroImgCont}>
-          <img
-            src={HeroImg}
-            alt=""
-          />
+          <img src={HeroImg} alt="" />
           <div className={`${styles.label} ${styles.label1}`}>
             <div className={`${styles.labelIcon} ${styles.iconPurple}`}>
               <i className="fa-solid fa-computer"></i>
             </div>
-            <span>Frontend Developer</span>
+            <span>React JS</span>
           </div>
 
           <div className={`${styles.label} ${styles.label2}`}>
             <div className={`${styles.labelIcon} ${styles.iconGreen}`}>
               <i className="ri-server-line"></i>
             </div>
-            <span>Backend Developer</span>
+            <span>Next JS</span>
           </div>
 
           <div className={`${styles.label} ${styles.label3}`}>
             <div className={`${styles.labelIcon} ${styles.iconCyan}`}>
               <i className="ri-smartphone-line"></i>
             </div>
-            <span>Android Developer</span>
+            <span>TypeScript</span>
           </div>
 
           <div className={`${styles.label} ${styles.label4}`}>
             <div className={`${styles.labelIcon} ${styles.iconRed}`}>
               <i className="ri-apple-line"></i>
             </div>
-            <span>iOS Developer</span>
+            <span>Tailwind</span>
           </div>
         </div>
       </div>

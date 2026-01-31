@@ -91,4 +91,7 @@
   .projectText p {
     font-size: 12px;
   }
+  .projectsOuterContainer {
+    padding: 10px;
+  }
 }

@@ -180,3 +180,18 @@
   display: flex;
   align-items: center;
 }
+
+@media (max-width: 650px) {
+  .skillName p {
+    font-size: 12px;
+    font-weight: 800;
+    margin: 0;
+    color: var(--white-color);
+  }
+  .backTitle {
+    font-size: 10px !important;
+  }
+  .experienceLevel p {
+    font-size: 12px !important;
+  }
+}

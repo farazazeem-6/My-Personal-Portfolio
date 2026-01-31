@@ -1,5 +1,12 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { GraduationCap, Award, Diamond, Briefcase, Code, Trophy } from 'lucide-react';
+import React, { useState, useRef, useEffect } from "react";
+import {
+  GraduationCap,
+  Award,
+  Diamond,
+  Briefcase,
+  Code,
+  Trophy,
+} from "lucide-react";
 
 const ScrollableTimeline = () => {
   const [activeIndex, setActiveIndex] = useState(1);
@@ -16,7 +23,7 @@ const ScrollableTimeline = () => {
       title: "Started Programming",
       description: "First line of code",
       color: "#8b5cf6",
-      dateRange: "2020-2021"
+      dateRange: "2020-2021",
     },
     {
       id: 2,
@@ -25,7 +32,7 @@ const ScrollableTimeline = () => {
       title: "Bachelor's in Computer Science",
       description: "University of Punjab",
       color: "#a855f7",
-      dateRange: "2020-2024"
+      dateRange: "2020-2024",
     },
     {
       id: 3,
@@ -34,7 +41,7 @@ const ScrollableTimeline = () => {
       title: "First Job",
       description: "Software Developer",
       color: "#c084fc",
-      dateRange: "2022-2023"
+      dateRange: "2022-2023",
     },
     {
       id: 4,
@@ -43,7 +50,7 @@ const ScrollableTimeline = () => {
       title: "Achievement Unlocked",
       description: "Best Developer Award",
       color: "#fbbf24",
-      dateRange: "2022-2024"
+      dateRange: "2022-2024",
     },
     {
       id: 5,
@@ -52,7 +59,7 @@ const ScrollableTimeline = () => {
       title: "Senior Position",
       description: "Promoted to Lead",
       color: "#60a5fa",
-      dateRange: "2024-2025"
+      dateRange: "2024-2025",
     },
     {
       id: 6,
@@ -61,8 +68,8 @@ const ScrollableTimeline = () => {
       title: "Current",
       description: "Building amazing things",
       color: "#34d399",
-      dateRange: "2024-2025"
-    }
+      dateRange: "2024-2025",
+    },
   ];
 
   const scrollToMilestone = (index) => {
@@ -71,7 +78,7 @@ const ScrollableTimeline = () => {
       const targetScroll = index * 300 - container.clientWidth / 2 + 150;
       container.scrollTo({
         left: targetScroll,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
       setActiveIndex(index);
     }
@@ -100,7 +107,11 @@ const ScrollableTimeline = () => {
     if (container && !isDragging) {
       const scrollPosition = container.scrollLeft + container.clientWidth / 2;
       const newActiveIndex = Math.round(scrollPosition / 300);
-      if (newActiveIndex !== activeIndex && newActiveIndex >= 0 && newActiveIndex < milestones.length) {
+      if (
+        newActiveIndex !== activeIndex &&
+        newActiveIndex >= 0 &&
+        newActiveIndex < milestones.length
+      ) {
         setActiveIndex(newActiveIndex);
       }
     }
@@ -114,8 +125,7 @@ const ScrollableTimeline = () => {
   const CurrentIcon = currentMilestone?.icon || Code;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 flex flex-col items-center justify-center overflow-hidden py-12">
-      
+    <div className="min-h-screen bg-linear-to-br from-slate-950 via-purple-950 to-slate-950 flex flex-col items-center justify-center overflow-hidden py-12">
       {/* Date Range Label */}
       <div className="text-center mb-12 z-10">
         <span className="text-gray-400 text-xl font-light tracking-widest">
@@ -134,12 +144,14 @@ const ScrollableTimeline = () => {
           onScroll={handleScroll}
           className="overflow-x-scroll overflow-y-hidden scrollbar-hide cursor-grab active:cursor-grabbing"
           style={{
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
           }}
         >
-          <div className="relative h-80 flex items-center" style={{ width: `${milestones.length * 300 + 600}px` }}>
-            
+          <div
+            className="relative h-80 flex items-center"
+            style={{ width: `${milestones.length * 300 + 600}px` }}
+          >
             {/* Timeline Ticks Background */}
             <div className="absolute top-16 left-0 right-0 flex items-end h-24 px-8">
               {[...Array(100)].map((_, i) => {
@@ -148,11 +160,12 @@ const ScrollableTimeline = () => {
                 return (
                   <div
                     key={i}
-                    className="flex-shrink-0 bg-gray-500 mx-1 transition-all duration-300"
+                    className="shrink-0 bg-gray-500 mx-1 transition-all duration-300"
                     style={{
-                      width: '2px',
-                      height: i % 10 === 0 ? '56px' : i % 5 === 0 ? '40px' : '24px',
-                      opacity: opacity
+                      width: "2px",
+                      height:
+                        i % 10 === 0 ? "56px" : i % 5 === 0 ? "40px" : "24px",
+                      opacity: opacity,
                     }}
                   />
                 );
@@ -160,7 +173,7 @@ const ScrollableTimeline = () => {
             </div>
 
             {/* Central Timeline Line */}
-            <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-purple-500/40 to-transparent" />
+            <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-purple-500/40 to-transparent" />
 
             {/* Milestone Markers */}
             <div className="flex items-center gap-0 pl-80">
@@ -170,24 +183,24 @@ const ScrollableTimeline = () => {
                 const distance = Math.abs(index - activeIndex);
                 const scale = isActive ? 1 : Math.max(0.5, 1 - distance * 0.2);
                 const opacity = Math.max(0.4, 1 - distance * 0.3);
-                
+
                 return (
                   <div
                     key={milestone.id}
-                    className="relative flex-shrink-0 transition-all duration-500 ease-out"
+                    className="relative shrink-0 transition-all duration-500 ease-out"
                     style={{
-                      width: '300px',
+                      width: "300px",
                       transform: `scale(${scale})`,
                       opacity: opacity,
                     }}
                   >
                     {/* Vertical Line */}
-                    <div 
-                      className="absolute left-1/2 -translate-x-1/2 w-0.5 bg-gradient-to-b from-transparent via-purple-400 to-transparent transition-all duration-500"
+                    <div
+                      className="absolute left-1/2 -translate-x-1/2 w-0.5 bg-linear-to-b from-transparent via-purple-400 to-transparent transition-all duration-500"
                       style={{
-                        height: isActive ? '90px' : '50px',
-                        top: isActive ? '-95px' : '-55px',
-                        opacity: isActive ? 1 : 0.4
+                        height: isActive ? "90px" : "50px",
+                        top: isActive ? "-95px" : "-55px",
+                        opacity: isActive ? 1 : 0.4,
                       }}
                     />
 
@@ -196,33 +209,37 @@ const ScrollableTimeline = () => {
                       onClick={() => scrollToMilestone(index)}
                       className="relative mx-auto w-20 h-20 group block"
                     >
-                      <div 
+                      <div
                         className="w-full h-full rounded-full flex items-center justify-center transition-all duration-500 transform hover:scale-110 shadow-2xl"
                         style={{
                           backgroundColor: milestone.color,
-                          boxShadow: isActive ? `0 0 50px ${milestone.color}` : `0 0 20px ${milestone.color}60`,
+                          boxShadow: isActive
+                            ? `0 0 50px ${milestone.color}`
+                            : `0 0 20px ${milestone.color}60`,
                         }}
                       >
-                        <Icon className={`${isActive ? 'w-10 h-10' : 'w-8 h-8'} text-white transition-all duration-500`} />
+                        <Icon
+                          className={`${isActive ? "w-10 h-10" : "w-8 h-8"} text-white transition-all duration-500`}
+                        />
                       </div>
-                      
+
                       {/* Animated Rings for Active */}
                       {isActive && (
                         <>
-                          <div 
+                          <div
                             className="absolute inset-0 rounded-full animate-ping"
-                            style={{ 
+                            style={{
                               backgroundColor: milestone.color,
                               opacity: 0.3,
-                              animationDuration: '2s'
+                              animationDuration: "2s",
                             }}
                           />
-                          <div 
+                          <div
                             className="absolute -inset-2 rounded-full animate-pulse"
-                            style={{ 
+                            style={{
                               backgroundColor: milestone.color,
                               opacity: 0.2,
-                              animationDuration: '1.5s'
+                              animationDuration: "1.5s",
                             }}
                           />
                         </>
@@ -231,7 +248,9 @@ const ScrollableTimeline = () => {
 
                     {/* Year Label */}
                     <div className="absolute top-full mt-6 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                      <span className={`${isActive ? 'text-white text-base' : 'text-gray-500 text-sm'} font-light transition-all duration-500`}>
+                      <span
+                        className={`${isActive ? "text-white text-base" : "text-gray-500 text-sm"} font-light transition-all duration-500`}
+                      >
                         {milestone.year}
                       </span>
                     </div>
@@ -243,19 +262,19 @@ const ScrollableTimeline = () => {
         </div>
 
         {/* Gradient Fade Edges */}
-        <div className="absolute top-0 left-0 w-40 h-full bg-gradient-to-r from-slate-950 to-transparent pointer-events-none z-10" />
-        <div className="absolute top-0 right-0 w-40 h-full bg-gradient-to-l from-slate-950 to-transparent pointer-events-none z-10" />
+        <div className="absolute top-0 left-0 w-40 h-full bg-linear-to-r from-slate-950 to-transparent pointer-events-none z-10" />
+        <div className="absolute top-0 right-0 w-40 h-full bg-linear-to-l from-slate-950 to-transparent pointer-events-none z-10" />
       </div>
 
       {/* Info Card */}
       {currentMilestone && (
         <div className="max-w-md mx-auto mt-16 bg-slate-800/90 backdrop-blur-lg rounded-2xl p-6 shadow-2xl border border-purple-500/30 transition-all duration-500 animate-in fade-in slide-in-from-bottom-4">
           <div className="flex items-start gap-4">
-            <div 
-              className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg"
-              style={{ 
+            <div
+              className="w-16 h-16 rounded-full flex items-center justify-center shrink-0 shadow-lg"
+              style={{
                 backgroundColor: currentMilestone.color,
-                boxShadow: `0 0 25px ${currentMilestone.color}80`
+                boxShadow: `0 0 25px ${currentMilestone.color}80`,
               }}
             >
               <CurrentIcon className="w-8 h-8 text-white" />

@@ -68,7 +68,7 @@ function Testimonials() {
         "service_hi1re2n", //  EmailJS Service ID
         "template_4l20rkn", // EmailJS Template ID
         form.current,
-        "jnwXsPB_umqpi1SeY" // EmailJS Public Key
+        "jnwXsPB_umqpi1SeY", // EmailJS Public Key
       )
       .then(
         (result) => {
@@ -93,7 +93,7 @@ function Testimonials() {
           setTimeout(() => {
             setShowToast(false);
           }, 3000);
-        }
+        },
       );
   };
 
@@ -136,7 +136,7 @@ function Testimonials() {
         </RevealOnScroll>
         <RevealOnScroll delay={0.1}>
           <div className={styles.projectsCalcs}>
-            <p className={styles.numberText}>3+</p>
+            <p className={styles.numberText}>1+</p>
             <p>Years Experience</p>
           </div>
         </RevealOnScroll>

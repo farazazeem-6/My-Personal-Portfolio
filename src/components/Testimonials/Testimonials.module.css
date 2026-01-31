@@ -59,7 +59,9 @@
   gap: 20px;
   background-color: var(--calc-box);
   cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
   width: 100%;
   color: #bfc4ca;
   font-weight: 500;
@@ -184,5 +186,8 @@
   }
   .testimonialsFooter p {
     font-size: 14px;
+  }
+  .testHeading {
+    font-size: 26px !important;
   }
 }

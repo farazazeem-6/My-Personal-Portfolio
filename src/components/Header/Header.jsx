@@ -1,14 +1,10 @@
 import styles from "../../components/Header/Header.module.css";
 import NavButton from "./NavButton/NavButton";
-import HeaderLogo from "./HeaderLogo/HeaderLogo";
 import ThemeButton from "./ThemeButton/ThemeButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import { Button } from "@mui/material";
-import LaunchIcon from "@mui/icons-material/Launch";
-import Modal from "../Modal/Modal";
 import ImageModal from "../ImageModal/ImageModal";
 import HeroImg from "../../../public/personal.jpeg";
 

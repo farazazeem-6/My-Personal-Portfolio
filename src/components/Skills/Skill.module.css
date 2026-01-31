@@ -212,12 +212,12 @@
     padding: 30px 20px;
   }
   .boxes {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
   }
 }
 @media (max-width: 650px) {
   .boxes {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 2fr));
     padding: 10px 0;
   }
   .skillBoxes {
@@ -225,6 +225,10 @@
   }
 }
 @media (max-width: 500px) {
+    .boxes {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 2fr));
+    padding: 10px 0;
+  }
   .numberText {
     font-size: 16px;
   }
