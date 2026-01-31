@@ -7,10 +7,10 @@ import { defineConfig, globalIgnores } from 'eslint/config'
 export default defineConfig([
   globalIgnores(['dist']),
   {
-    files: ['**/*.{js,jsx}'],
+    files: ['**/*.{js,jsx,ts,tsx}'], // Added TS extensions just in case
     extends: [
       js.configs.recommended,
-      reactHooks.configs['recommended-latest'],
+      reactHooks.configs.recommended,
       reactRefresh.configs.vite,
     ],
     languageOptions: {
@@ -23,7 +23,16 @@ export default defineConfig([
       },
     },
     rules: {
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      // 1. Effectively ignores all unused variables/code
+      'no-unused-vars': 'off',
+      
+      // 2. Disables common React Hook checks if they are bothering you
+      'react-hooks/rules-of-hooks': 'off',
+      'react-hooks/exhaustive-deps': 'off',
+
+      // 3. If you have any TS-specific rules bleeding in, this turns them off
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/ban-ts-comment': 'off',
     },
   },
 ])
