@@ -19,9 +19,7 @@ function Home() {
       <Skill />
       <Project />
       <Testimonials />
-      <Contact/>
-    
-      
+      <Contact />
     </Fragment>
   );
 }
